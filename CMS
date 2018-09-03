@@ -1,9 +1,243 @@
 
-public class CMS {
+import java.util.Scanner;
 
+public class CMS {
+	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		memberUI();
 
 	}
+	private static String InputPass(Scanner InputScanner,String Question, String SetPass, String Error) 
+	{
+		System.out.println(Question);
+		String Password = InputScanner.nextLine();
+		
+		if(Password.trim().length() != 0) {
+			if(Password.equals(SetPass)) {
+				return SetPass;
+			}
+			else {
+				System.out.println(Error);
+				memberUI();
+				return InputPass(InputScanner, Question, SetPass, Error);
+			}
+		}
+		else {
+			System.out.println(Error);
+			memberUI();
+			return InputPass(InputScanner, Question, SetPass, Error);
+		}
+	}
+	
+	public static void memberUI() {
+		System.out.println("==========================");
+		System.out.println("Course Manangement System");
+		System.out.println("==========================");
+		System.out.println("Member Type?");
+		System.out.println("1. Student");
+		System.out.println("2. Lecturer");
+		System.out.println("3. Program Coodintator");
+		System.out.println("4. Admin");
+		System.out.println("-----------------------------");
+		
+		Selection();
+	}
+	
+	public static void Selection()
+	{
+		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		String option = s.nextLine();
+		System.out.println("-----------------------------");
+		switch(option)
+		{
+			case "1":
+			{
+				sPasswordInput();
+				break;
+			}
+			case "2":
+			{
+				lPasswordInput();
+				break;
+			}
+			case "3":
+			{
+				pPasswordInput();
+				break;
+			}
+			case "4":
+			{
+				aPasswordInput();
+				break;
+			}
+		}
+	}
+	private static void sPasswordInput() {
+		Scanner studentPass = new Scanner(System.in);
+		switch(InputPass(studentPass, "Enter Student Password:","student", "Incorrect Password")) {
+		case "student":{
+			createStudentMenu();
+			break;
+		}
+		}
+		
+	}
+	public static void createStudentMenu() {
+		System.out.println("==========================");
+		System.out.println("Student Menu");
+		System.out.println("==========================");
+		System.out.println("1. View Availabe Courses");
+		System.out.println("2. Enrol in Course");
+		System.out.println("-----------------------------");
+		
+		sMenuSelection();
+	}
+	public static void sMenuSelection()
+	{
+		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		String option = s.nextLine();
+		System.out.println("-----------------------------");
+		switch(option)
+		{
+			case "1":
+			{
+				break;
+			}
+			case "2":
+			{
+				break;
+			}
+		}
+	}
+	private static void lPasswordInput() {
+		Scanner lecturerPass = new Scanner(System.in);
+		switch(InputPass(lecturerPass, "Enter Lecturer Password:","lecturer", "Incorrect Password")) {
+		case "lecturer":
+		{
+			createLecturerMenu();
+			break;
+		}
+		}
+		
+	}
+	private static void createLecturerMenu() {
+		System.out.println("==========================");
+		System.out.println("Lecturer Menu");
+		System.out.println("==========================");
+		System.out.println("1. View Results");
+		System.out.println("2. Upload results");
+		System.out.println("3. View past results");
+		System.out.println("-----------------------------");
+		
+		lMenuSelection();
+	}
+	private static void lMenuSelection() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		String option = s.nextLine();
+		System.out.println("-----------------------------");
+		switch(option)
+		{
+			case "1":
+			{
+				break;
+			}
+			case "2":
+			{
+				break;
+			}
+			case "3":
+				break;
+		}
+	}
+	private static void pPasswordInput() {
+		Scanner progCoordPass = new Scanner(System.in);
+		switch(InputPass(progCoordPass,"Enter Program Cooridnator Password:","program coodrinator", "Incorrect Password")){
+		case "program coodinator":
+		{
+			createProgCoordMenu();
+			break;
+		}
+		}
+		
+	}
+	private static void createProgCoordMenu() {
+		System.out.println("==========================");
+		System.out.println("Program Coordintor Menu");
+		System.out.println("==========================");
+		System.out.println("1. Add new course");
+		System.out.println("2. Grant exceptions");
+		System.out.println("3. Grant special permissions");
+		System.out.println("-----------------------------");
+		
+		pMenuSelecton();
+		
+	}
+	private static void pMenuSelecton() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		String option = s.nextLine();
+		System.out.println("-----------------------------");
+		switch(option)
+		{
+			case "1":
+			{
+				break;
+			}
+			case "2":
+			{
+				break;
+			}
+			case "3":
+				break;
+		}
+	}
+	private static void aPasswordInput() {
+		Scanner adminPass = new Scanner(System.in);
+		switch(InputPass(adminPass, "Enter Admin Password:","admin", "Incorrect Password")){
+			case "admin":
+			{
+				createAdminMenu();
+				break;
+			}
+
+		}
+	}
+	private static void createAdminMenu() {
+		System.out.println("==========================");
+		System.out.println("Admin Menu");
+		System.out.println("==========================");
+		System.out.println("1. Assign lecturer");
+		System.out.println("2. Advance week");
+		System.out.println("3. View past performance");
+		System.out.println("-----------------------------");
+		
+		aMenuSelecton();
+	}
+	private static void aMenuSelecton() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		String option = s.nextLine();
+		System.out.println("-----------------------------");
+		switch(option)
+		{
+			case "1":
+			{
+				break;
+			}
+			case "2":
+			{
+				break;
+			}
+			case "3":
+				break;
+		}
+	}
+	
+
 
 }
