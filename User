@@ -1,0 +1,7 @@
+public interface User {
+	public void login();
+	public void menu();
+	
+	//public void respondToMenuOption(int option);
+	
+}
