@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+class Main {
+	public static void main(String[] args) {
+		boolean run = true;
+		while(run) {
+		System.out.println("==========================");
+		System.out.println("Course Manangement System");
+		System.out.println("==========================");
+		System.out.println("Member Type?");
+		System.out.println("1. Student");
+		System.out.println("2. Lecturer");
+		System.out.println("3. Program Coodintator");
+		System.out.println("4. Admin");
+		System.out.println("-----------------------------");
+		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		int result = s.nextInt();
+		System.out.println("-----------------------------");
+		User u = new Student();
+	
+		switch (result) {
+			case 1:
+				u = new Student();
+				break;
+			case 2:
+				u = new Lecturer();
+				break;
+			case 3:
+				u = new Coordinator();
+				break;
+			case 4:
+				u = new Admin();
+				break;
+			default:
+				System.out.println("Error");
+		}
+		System.out.println("main menu option = " + result);
+		//u.doEverytingNow();
+		u.login();
+		
+		u.menu();
+
+		//u.respondToMenuOption(result);
+		System.out.println("Do you want to re-reun the main menu?");
+		Scanner rerun = new Scanner(System.in);
+		String getUserChoice = rerun.nextLine();
+		if (getUserChoice.equals("no"))
+	        run = false;
+		}
+	}
+}
