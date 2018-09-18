@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class Student implements User {
+
+	public boolean isLoggedIn = false;
+	public String id = null;
+
+	public void login() {
+		Scanner input = new Scanner(System.in);
+
+		String password;
+
+		System.out.println("\n==========================" + "\nLog in" + "\n==========================");
+		System.out.println("Enter Student ID: ");
+		id = input.next();
+
+		System.out.println("Enter password: ");
+		password = input.next();
+
+		int length = id.length();
+		if (id.matches("s" + "[0-9]+") && id.length() == 8 && password.equals("student")) {
+			System.out.println("You are logged in");
+			isLoggedIn = true;
+		} else {
+			System.out.println("Incorrect Login");
+		}
+	}
+
+	public void menu() {
+		if (isLoggedIn == true) {
+			System.out.println("are you logged in? " + isLoggedIn);
+			System.out.println("\n==========================");
+			System.out.println("Student Menu");
+			System.out.println("ID: " + id);
+			System.out.println("==========================");
+			System.out.println("1. View Availabe Courses");
+			System.out.println("2. Enrol in Course");
+			System.out.println("-----------------------------");
+
+			Scanner s = new Scanner(System.in);
+			System.out.println("Enter an Option:");
+			String result = s.nextLine();
+			System.out.println("-----------------------------");
+			System.out.println("student menu option = " + result);
+		} else {
+			System.out.println("You are not logged in yet");
+		}
+
+	}
+
+	/*
+	 * public void respondToMenuOption(int option) {
+	 * System.out.println("student menu option = " + option);
+	 * 
+	 * }
+	 */
+}
