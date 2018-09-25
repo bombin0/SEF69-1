@@ -1,0 +1,29 @@
+import java.util.ArrayList;
+
+// Class is used to store information 
+class Campus {
+	
+	public static ArrayList<Course> courses = new ArrayList<Course>();
+	public static ArrayList<Student> students = new ArrayList<Student>();
+
+		
+	private static final Campus instance = new Campus();
+	
+	//private constructor to avoid client applications to use constructor
+	private Campus() {}
+
+	public static Campus getInstance() {
+		return instance;
+	}
+
+		
+	public ArrayList<Course> getCourses() {
+		return courses;
+	}
+	
+	public ArrayList<Student> getStudents() {
+		return students;
+	}
+	
+
+}
