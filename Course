@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Course extends Admin {
+	public boolean creationCourse = false;
+
+	String name;
+	String courseID;
+
+	public void createCourse(String name, String CourseID) {
+		// creating a menu for for create course
+		if (creationCourse == true) {
+			System.out.println("Create Course");
+
+			System.out.println("\n -----------------------------");
+
+			// Getting input (dunno if this is the right way, wanna be able to make the
+			// input into the array)
+			Scanner s = new Scanner(System.in);
+
+			System.out.println("Enter The course name:");
+			this.name = s.nextLine();
+			System.out.println("Enter Course Code");
+			this.courseID = s.nextLine();
+			System.out.println("Course Created");
+
+		}
+
+		// one to many association with course offerings
+		// ArrayList<CourseOffering> co = new ArrayList<CourseOffering>();
+
+	}
+
+}
