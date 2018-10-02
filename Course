@@ -6,6 +6,8 @@ class Course extends Admin {
 
 	String name;
 	String courseID;
+	
+	// maybe for loop need to be used to increment the info we storing here 
 
 	public void createCourse(String name, String CourseID) {
 		// creating a menu for for create course
