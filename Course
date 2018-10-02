@@ -6,12 +6,14 @@ class Course extends Admin {
 
 	String name;
 	String courseID;
-	
-	// maybe for loop need to be used to increment the info we storing here 
 
-	public void createCourse(String name, String CourseID) {
+	// I put one if statement and for loop in here I don't know which one we need 
+	// Whichever one works 
+
+	public void createCourse(String name, String CourseID, int i) {
 		// creating a menu for for create course
-		if (creationCourse == true) {
+
+		for (creationCourse = true, i = 0; i > 0; i++) {
 			System.out.println("Create Course");
 
 			System.out.println("\n -----------------------------");
@@ -27,10 +29,22 @@ class Course extends Admin {
 			System.out.println("Course Created");
 
 		}
-
-		// one to many association with course offerings
-		// ArrayList<CourseOffering> co = new ArrayList<CourseOffering>();
-
 	}
+	/*
+	 * if (creationCourse == true) { System.out.println("Create Course");
+	 * 
+	 * System.out.println("\n -----------------------------");
+	 * 
+	 * // Getting input (dunno if this is the right way, wanna be able to make the
+	 * // input into the array) Scanner s = new Scanner(System.in);
+	 * 
+	 * System.out.println("Enter The course name:"); this.name = s.nextLine();
+	 * System.out.println("Enter Course Code"); this.courseID = s.nextLine();
+	 * System.out.println("Course Created");
+	 * 
+	 * }
+	 */
+	// one to many association with course offerings
+	// ArrayList<CourseOffering> co = new ArrayList<CourseOffering>();
 
 }
