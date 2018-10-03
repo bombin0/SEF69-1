@@ -26,26 +26,30 @@ class Student implements User {
 		}
 	}
 
-	public void menu() {
+	public void checkLogin() {
 		if (isLoggedIn == true) {
-			System.out.println("are you logged in? " + isLoggedIn);
-			System.out.println("\n==========================");
-			System.out.println("Student Menu");
-			System.out.println("ID: " + id);
-			System.out.println("==========================");
-			System.out.println("1. View Availabe Courses");
-			System.out.println("2. Enrol in Course");
-			System.out.println("-----------------------------");
-
-			Scanner s = new Scanner(System.in);
-			System.out.println("Enter an Option:");
-			String result = s.nextLine();
-			System.out.println("-----------------------------");
-			System.out.println("student menu option = " + result);
+			runmenu();
 		} else {
 			System.out.println("You are not logged in yet");
 		}
 
+	}
+
+	private void runmenu() {
+		System.out.println("are you logged in? " + isLoggedIn);
+		System.out.println("\n==========================");
+		System.out.println("Student Menu");
+		System.out.println("ID: " + id);
+		System.out.println("==========================");
+		System.out.println("1. View Availabe Courses");
+		System.out.println("2. Enrol in Course");
+		System.out.println("-----------------------------");
+
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		String result = s.nextLine();
+		System.out.println("-----------------------------");
+		System.out.println("student menu option = " + result);
 	}
 
 	/*
