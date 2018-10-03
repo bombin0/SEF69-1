@@ -40,10 +40,10 @@ class Main {
 		//u.doEverytingNow();
 		u.login();
 		
-		u.menu();
+		u.checkLogin();
 
 		//u.respondToMenuOption(result);
-		System.out.println("Do you want to re-reun the main menu?");
+		System.out.println("\nDo you want to re-run the main menu?");
 		Scanner rerun = new Scanner(System.in);
 		String getUserChoice = rerun.nextLine();
 		if (getUserChoice.equals("no"))
