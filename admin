@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Admin implements User {
@@ -25,30 +26,65 @@ public class Admin implements User {
 	    	System.out.println("Incorrect Login");
 	    }
 	}
-	public void menu() {
+	public void checkLogin() {
 		if (isLoggedIn == true) {
-			System.out.println("are you logged in? " + isLoggedIn);
-			System.out.println("\n==========================");
-			System.out.println("Admin Menu");
-			System.out.println("ID: " + id);
-			System.out.println("==========================");
-			System.out.println("1. Assign lecturer");
-			System.out.println("2. Advance week");
-			System.out.println("3. View past performance");
-			System.out.println("-----------------------------");
-			
-			Scanner s = new Scanner(System.in);
-			System.out.println("Enter an Option:");
-			String result = s.nextLine();
-			System.out.println("-----------------------------");
-			System.out.println("admin menu option = "+ result);
+			runmenu();
 			}
 			else {
 				System.out.println("You are not logged in yet");
 			}
 
 		}
+	private void runmenu() {
+		System.out.println("are you logged in? " + isLoggedIn);
+		System.out.println("\n==========================");
+		System.out.println("Admin Menu");
+		System.out.println("ID: " + id);
+		System.out.println("==========================");
+		System.out.println("1. Add new course");
+		System.out.println("2. Assign Lecturer");
+		System.out.println("3. View past performance");
+		System.out.println("4. Advance Week");
+		System.out.println("-----------------------------");
+		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		int result = s.nextInt();
+		System.out.println("-----------------------------");
+		System.out.println("admin menu option = "+ result);
+		
+		if (result == 1) {
+			System.out.println("result input");
+			createCourse();
+		}
 	}
+	
+	public void createCourse() {
+		Scanner x = new Scanner(System.in);
+		System.out.println("Enter The course name:");
+		String name = x.nextLine();
+		System.out.println("Enter Course Code");
+		String courseID = x.nextLine();
+		System.out.println("Course Created");
+		
+		Course c = new Course(name, courseID);
+		
+		// do it like this...
+		Campus s = Campus.getInstance();
+		
+		ArrayList<Course> courses = s.getCourses();
+		
+		courses.add(c);
+		printCourseArray(courses);
+	}
+	private void printCourseArray(ArrayList<Course> courses) {
+        for (int i = 0; i < courses.size(); ++i) {
+            courses.get(i).Print();
+        }
+    }
+	}
+	
+	
 	/*public void respondToMenuOption(int option) {
 		System.out.println("lecturer menu " + option);
 
