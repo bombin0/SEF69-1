@@ -2,15 +2,35 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Course extends Admin {
-	public boolean creationCourse = false;
-
+		
 	String name;
 	String courseID;
-
+	
+	public Course(String name, String courseID) {
+		this.name = name;
+		this.courseID = courseID;
+	}
 	// I put one if statement and for loop in here I don't know which one we need 
 	// Whichever one works 
 
-	public void createCourse(String name, String CourseID, int i) {
+    public void Print(){
+        System.out.print(("("+getName()));
+        System.out.print(",");
+        System.out.print(getid());
+        System.out.print(") ");
+    }
+
+	private String getid() {
+		// TODO Auto-generated method stub
+		return (courseID);
+	}
+
+	private String getName() {
+		// TODO Auto-generated method stub
+		return (name);
+	}
+
+	/*public void createCourse(String name, String CourseID, int i) {
 		// creating a menu for for create course
 
 		for (creationCourse = true, i = 0; i > 0; i++) {
