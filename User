@@ -1,6 +1,6 @@
 public interface User {
 	public void login();
-	public void menu();
+	public void checkLogin();
 	
 	//public void respondToMenuOption(int option);
 	
