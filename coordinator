@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 class Coordinator implements User {
+	
 	public boolean isLoggedIn = false;
 	public String id = null;
 
@@ -25,26 +26,31 @@ class Coordinator implements User {
 		}
 	}
 
-	public void menu() {
+	public void checkLogin() {
 		if (isLoggedIn == true) {
-			System.out.println("\n==========================");
-			System.out.println("Program Coordintor Menu");
-			System.out.println("ID: " + id);
-			System.out.println("==========================");
-			System.out.println("1. Add new course");
-			System.out.println("2. Grant exceptions");
-			System.out.println("3. Grant special permissions");
-			System.out.println("-----------------------------");
-
-			Scanner s = new Scanner(System.in);
-			System.out.println("Enter an Option:");
-			String result = s.nextLine();
-			System.out.println("-----------------------------");
-			System.out.println("coordinator menu option = " + result);
+			runmenu();
 		} else {
 			System.out.println("You are not logged in yet");
 		}
 
+	}
+
+	private void runmenu() {
+		System.out.println("\n==========================");
+		System.out.println("Program Coordintor Menu");
+		System.out.println("ID: " + id);
+		System.out.println("==========================");
+		System.out.println("1. Add new course");
+		System.out.println("2. Grant exceptions");
+		System.out.println("3. Grant special permissions");
+		System.out.println("-----------------------------");
+
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		String result = s.nextLine();
+		System.out.println("-----------------------------");
+		System.out.println("coordinator menu option = " + result);
+		
 	}
 }
 /*
