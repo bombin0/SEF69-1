@@ -26,29 +26,32 @@ class Lecturer implements User {
 	    	System.out.println("Incorrect Login");
 	    }
 	}
-	public void menu() {
+	public void checkLogin() {
 		if (isLoggedIn == true) {
-			System.out.println("are you logged in? " + isLoggedIn);
-			System.out.println("\n==========================");
-			System.out.println("Lecturer Menu");
-			System.out.println("ID: " + id);
-			System.out.println("==========================");
-			System.out.println("1. View Results");
-			System.out.println("2. Upload results");
-			System.out.println("3. View past results");
-			System.out.println("-----------------------------");
-			
-			Scanner s = new Scanner(System.in);
-			System.out.println("Enter an Option:");
-			String result = s.nextLine();
-			System.out.println("-----------------------------");
-			System.out.println("lecturer menu option = "+ result);
+			runmenu();
 			}
 			else {
 				System.out.println("You are not logged in yet");
 			}
 
 		}
+	private void runmenu() {
+		System.out.println("are you logged in? " + isLoggedIn);
+		System.out.println("\n==========================");
+		System.out.println("Lecturer Menu");
+		System.out.println("ID: " + id);
+		System.out.println("==========================");
+		System.out.println("1. View Results");
+		System.out.println("2. Upload results");
+		System.out.println("3. View past results");
+		System.out.println("-----------------------------");
+		
+		Scanner s = new Scanner(System.in);
+		System.out.println("Enter an Option:");
+		String result = s.nextLine();
+		System.out.println("-----------------------------");
+		System.out.println("lecturer menu option = "+ result);		
+	}
 	}
 	/*public void respondToMenuOption(int option) {
 		System.out.println("lecturer menu " + option);
